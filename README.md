@@ -1,6 +1,6 @@
 # JWT-Authentication
-![jwt](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/b58e010b-ee7b-45d6-89a1-be9970419bb7)
 ![jwtimgae](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/3f669297-4acd-4a35-ad93-587d3390b5b4)
+
 ![flow](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/88aad617-8858-4fbc-8bd7-af4e99c3aaeb)
 
 # Node.js JWT Authentication Project
