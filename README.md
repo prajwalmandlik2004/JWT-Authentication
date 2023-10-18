@@ -26,8 +26,8 @@ Before you begin, ensure you have met the following requirements:
 ## Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/your-nodejs-jwt-authentication-project.git
-   cd your-nodejs-jwt-authentication-project
+git clone https://github.com/your-username/your-nodejs-jwt-authentication-project.git
+cd your-nodejs-jwt-authentication-project
    
 1. Install dependencies :
 ```bash
