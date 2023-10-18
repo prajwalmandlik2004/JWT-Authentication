@@ -27,11 +27,7 @@ Before you begin, ensure you have met the following requirements:
 - MongoDB installed and running. Download MongoDB [here](https://www.mongodb.com/try/download/community).
 
 ## Installation
-1. Clone this repository:
-```bash
-git clone https://github.com/your-username/your-nodejs-jwt-authentication-project.git
-```
-   
+ 
 1. Install dependencies :
 ```bash
 npm install
