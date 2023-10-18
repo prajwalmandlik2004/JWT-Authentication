@@ -7,11 +7,6 @@
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Authentication](#authentication)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 This Node.js JWT Authentication Project is a secure and scalable solution for authenticating users using JSON Web Tokens (JWT). It provides a robust foundation for building secure web applications, APIs, and more. The project is implemented in Node.js and uses [Express](https://expressjs.com/) for the server and [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) for JWT generation and verification.
