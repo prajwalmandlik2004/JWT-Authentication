@@ -34,14 +34,17 @@ Before you begin, ensure you have met the following requirements:
    git clone https://github.com/your-username/your-nodejs-jwt-authentication-project.git
    cd your-nodejs-jwt-authentication-project
    
-1. Install dependencies : 
+1. Install dependencies :
+```bash
 npm install
 
-2. Create a .env file in the project root and configure the following environment variables : 
+2. Create a .env file in the project root and configure the following environment variables :
+```bash
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/your-database
 JWT_SECRET=your-secret-key
 
-4. Start Server : 
+3. Start Server :
+```bash
 npm start
 
