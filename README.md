@@ -2,7 +2,6 @@
 
 This repository contains a Node.js and Express.js project that provides a secure and fully-featured authentication system, including password hashing using bcrypt, JWT (JSON Web Token) authentication, cookie parsing, and complete authorization. The system also allows users to log out from all devices or a single device. This README file will guide you through the setup, features, and usage of the project.
 
-
 ![member-log-membership-username-password-concept](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/34ce16b4-d781-421e-aa80-d90d723e9784)
 
 ## Features
@@ -27,8 +26,7 @@ This repository contains a Node.js and Express.js project that provides a secure
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/login-signup-project.git
-   cd login-signup-project
+   git clone https://github.com/yourusername/JWT-Authentication.git
    ```
 
 2. **Install Dependencies:**
@@ -39,11 +37,11 @@ This repository contains a Node.js and Express.js project that provides a secure
 3. **Environment Variables:**
    Create a `.env` file in the project root and configure the following environment variables:
    - `PORT` - The port on which the server will run.
-   - `JWT_SECRET` - Secret key for JWT token generation.
-   - `DB_URI` - MongoDB connection URI.
+   - `SECRET_KEY` - Secret key for JWT token generation.
+   - `CONNECTION_MONGO` - MongoDB connection URI.
 
 4. **Database Setup:**
-   Ensure you have MongoDB installed and running. Update the `DB_URI` in the `.env` file to point to your database.
+   Ensure you have MongoDB installed and running. Update the `CONNECTION_MONGO` in the `.env` file to point to your database.
 
 5. **Start the Server:**
    ```bash
@@ -59,14 +57,13 @@ This repository contains a Node.js and Express.js project that provides a secure
 3. **Protected Routes:** Certain routes are protected and can only be accessed by authenticated users. The server will return a `401 Unauthorized` response if you attempt to access these routes without authentication.
 
 4. **Logout:**
-   - To log out from the current device, access `/logout`.
    - To log out from all devices, access `/logout`.
 
 ## API Endpoints
 
 - `POST /register`: Register a new user.
 - `POST /login`: Login with username and password to receive a JWT token.
-- `POST /logout`: Log out from the current as well as all device.
+- `POST /logout`: Log out from all device.
 
 ## Contributions
 
