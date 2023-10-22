@@ -1,4 +1,6 @@
-# Login - Signup Project using Node.js and Express.js
+# Login / Signup Project with JWT Authentication\
+
+**Node Js , Express Js**
 
 This repository contains a Node.js and Express.js project that provides a secure and fully-featured authentication system, including password hashing using bcrypt, JWT (JSON Web Token) authentication, cookie parsing, and complete authorization. The system also allows users to log out from all devices or a single device. This README file will guide you through the setup, features, and usage of the project.
 
