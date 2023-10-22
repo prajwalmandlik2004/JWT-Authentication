@@ -1,47 +1,81 @@
+# Login/Signup Project using Node.js and Express.js
+
+This repository contains a Node.js and Express.js project that provides a secure and fully-featured authentication system, including password hashing using bcrypt, JWT (JSON Web Token) authentication, cookie parsing, and complete authorization. The system also allows users to log out from all devices or a single device. This README file will guide you through the setup, features, and usage of the project.
+
+## Features
+
+1. **User Registration:** Allows users to sign up by providing a username and a password. Passwords are securely hashed using bcrypt before being stored in the database.
+
+2. **User Login:** Registered users can log in by providing their username and password.
+
+3. **JWT Authentication:** JSON Web Tokens are used to authenticate users after successful login. The JWT contains user information and is securely sent in an HTTP-only cookie to protect against cross-site scripting (XSS) attacks.
+
+4. **Authorization:** Users are authenticated before accessing protected routes. The project includes middleware for ensuring only authorized users can access specific endpoints.
+
+5. **Logout Functionality:**
+   - **Logout from All Devices:** Users can log out from all devices, effectively invalidating their JWT token and requiring re-authentication on all devices.
+   - **Logout from a Single Device:** Users can log out from a specific device while staying logged in on other devices.
+  
 # JWT-Authentication
-![jwtimgae](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/3f669297-4acd-4a35-ad93-587d3390b5b4)
 
 ![flow](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/88aad617-8858-4fbc-8bd7-af4e99c3aaeb)
 
-# Node.js JWT Authentication Project
+## Installation and Setup
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/login-signup-project.git
+   cd login-signup-project
+   ```
 
-## Introduction
-This Node.js JWT Authentication Project is a secure and scalable solution for authenticating users using JSON Web Tokens (JWT). It provides a robust foundation for building secure web applications, APIs, and more. The project is implemented in Node.js and uses [Express](https://expressjs.com/) for the server and [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) for JWT generation and verification.
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Features
-- User registration and login with JWT authentication.
-- Password hashing and salting for security.
-- Middleware for route protection.
-- Scalable and easily extendable architecture.
-- Well-documented code for easy customization.
+3. **Environment Variables:**
+   Create a `.env` file in the project root and configure the following environment variables:
+   - `PORT` - The port on which the server will run.
+   - `JWT_SECRET` - Secret key for JWT token generation.
+   - `DB_URI` - MongoDB connection URI.
 
-## Prerequisites
-Before you begin, ensure you have met the following requirements:
-- Node.js and npm installed. You can download them [here](https://nodejs.org/).
-- MongoDB installed and running. Download MongoDB [here](https://www.mongodb.com/try/download/community).
+4. **Database Setup:**
+   Ensure you have MongoDB installed and running. Update the `DB_URI` in the `.env` file to point to your database.
 
-## Installation
- 
-1. Install dependencies :
-```bash
-npm install
-```
+5. **Start the Server:**
+   ```bash
+   npm start
+   ```
 
-2. Create a .env file in the project root and configure the following environment variables :
-```bash
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/your-database
-JWT_SECRET=your-secret-key
-```
+## Usage
 
-3. Start Server :
-```bash
-npm start
-```
+1. **Registration:** Access `/register` to create a new user account by providing a username and password.
 
+2. **Login:** Access `/login` to log in with your registered account.
+
+3. **Protected Routes:** Certain routes are protected and can only be accessed by authenticated users. The server will return a `401 Unauthorized` response if you attempt to access these routes without authentication.
+
+4. **Logout:**
+   - To log out from the current device, access `/logout`.
+   - To log out from all devices, access `/logout-all`.
+
+## API Endpoints
+
+- `POST /register`: Register a new user.
+- `POST /login`: Login with username and password to receive a JWT token.
+- `GET /protected-route`: Example of a protected route that requires authentication.
+- `POST /logout`: Log out from the current device.
+- `POST /logout-all`: Log out from all devices.
+
+## Contributions
+
+Contributions are welcome! If you want to contribute to this project, please follow the standard Git flow:
+
+1. Fork the repository.
+2. Create a new branch for your feature: `git checkout -b feature/your-feature`.
+3. Commit and push your changes: `git commit -m "Add feature" && git push origin feature/your-feature`.
+4. Create a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
