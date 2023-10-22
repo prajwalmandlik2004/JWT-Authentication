@@ -12,8 +12,11 @@ require('./database/connection');
 const { json } = require('express');
 const Register = require('./models/registers');
 const bcrypt = require('bcryptjs');
+const cookieParser = require('cookie-parser');
+const auth = require('./middleware/auth');
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(staticPath));
 app.set("view engine", "hbs");
@@ -24,6 +27,36 @@ hbs.registerPartials(partialsPath);
 
 app.get('/', (req, res) => {
     res.render("index");
+});
+
+app.get('/secret', auth, (req, res) => {
+    console.log(`Awesome cookie : ${req.cookies.jwt}`);
+    res.render("secret");
+});
+
+app.get('/logout', auth, async (req, res) => {
+    try {
+        console.log(req.user);
+
+        // Logout from only one device : 
+
+        // req.user.tokens = req.user.tokens.filter((curElement) => {
+        //     return curElement.token != req.token;
+        // })
+
+
+        // Logout from all device : 
+
+        req.user.tokens = [];
+
+
+        res.clearCookie("jwt");
+        console.log("Logout Successfully !!");
+        await req.user.save();
+        res.render("login");
+    } catch (error) {
+        res.status(500).send(error);
+    }
 });
 
 app.get('/register', (req, res) => {
@@ -57,6 +90,19 @@ app.post('/register', async (req, res) => {
             const token = await registerEmplyoee.genAuthToken();
             console.log("The token part : " + token);
 
+            // Get token and store into cookies : 
+
+            // res.cookie() is used to set the cookie name to the value 
+            // value parameter may be a string , object to JSON
+
+            res.cookie("jwt", token, {
+                expires: new Date(Date.now() + 600000),
+                httpOnly: true
+                // secure : true => works only in https
+            });
+
+            // console.log(cookie);
+
             const saveData = await registerEmplyoee.save();
             console.log("The page part is : " + saveData);
             res.status(201).render("index");
@@ -82,6 +128,16 @@ app.post('/login', async (req, res) => {
 
         const token = await userEmail.genAuthToken();
         console.log("The token is : " + token);
+
+        // Get token and store into cookies : 
+
+        res.cookie("jwt", token, {
+            expires: new Date(Date.now() + 600000),
+            httpOnly: true
+            // secure : true => works only in https
+        });
+
+        // console.log(cookie);
 
         // userEmail.password === password
         if (isMatch) {
@@ -123,7 +179,7 @@ app.post('/login', async (req, res) => {
 //     // Return true
 // }
 
-// securePassword("prajwal@123");
+// securePassword("rock@123");
 
 
 
