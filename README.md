@@ -1,5 +1,7 @@
 # Login/Signup Project using Node.js and Express.js
 
+![ls](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/dc8dbd97-ef46-4e61-b472-cd3187a02279)
+
 This repository contains a Node.js and Express.js project that provides a secure and fully-featured authentication system, including password hashing using bcrypt, JWT (JSON Web Token) authentication, cookie parsing, and complete authorization. The system also allows users to log out from all devices or a single device. This README file will guide you through the setup, features, and usage of the project.
 
 ## Features
@@ -17,6 +19,7 @@ This repository contains a Node.js and Express.js project that provides a secure
    - **Logout from a Single Device:** Users can log out from a specific device while staying logged in on other devices.
   
 # JWT-Authentication
+
 ![flow](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/88aad617-8858-4fbc-8bd7-af4e99c3aaeb)
 
 ## Installation and Setup
