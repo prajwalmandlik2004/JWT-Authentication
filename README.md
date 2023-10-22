@@ -17,7 +17,6 @@ This repository contains a Node.js and Express.js project that provides a secure
    - **Logout from a Single Device:** Users can log out from a specific device while staying logged in on other devices.
   
 # JWT-Authentication
-
 ![flow](https://github.com/prajwalmandlik2004/JWT-Authentication/assets/99119449/88aad617-8858-4fbc-8bd7-af4e99c3aaeb)
 
 ## Installation and Setup
@@ -57,15 +56,13 @@ This repository contains a Node.js and Express.js project that provides a secure
 
 4. **Logout:**
    - To log out from the current device, access `/logout`.
-   - To log out from all devices, access `/logout-all`.
+   - To log out from all devices, access `/logout`.
 
 ## API Endpoints
 
 - `POST /register`: Register a new user.
 - `POST /login`: Login with username and password to receive a JWT token.
-- `GET /protected-route`: Example of a protected route that requires authentication.
-- `POST /logout`: Log out from the current device.
-- `POST /logout-all`: Log out from all devices.
+- `POST /logout`: Log out from the current as well as all device.
 
 ## Contributions
 
@@ -75,7 +72,3 @@ Contributions are welcome! If you want to contribute to this project, please fol
 2. Create a new branch for your feature: `git checkout -b feature/your-feature`.
 3. Commit and push your changes: `git commit -m "Add feature" && git push origin feature/your-feature`.
 4. Create a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
