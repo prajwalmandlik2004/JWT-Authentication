@@ -14,11 +14,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js -e js,hbs",
-    "vercel-buil" : "echo hello"
+    "dev": "nodemon src/app.js -e js,hbs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": ""
 }
+
+
