@@ -71,6 +71,7 @@ employeeSchema.methods.genAuthToken = async function () {
 
 
 // Password Hashing : ( Middleware )
+// Bycrypt Hashing Algorithm
 
 employeeSchema.pre("save", async function (next) {
 
