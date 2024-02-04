@@ -7,7 +7,7 @@ const { register } = require('module');
 const staticPath = path.join(__dirname, "../public");
 const templatePath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 require('./database/connection');
 const { json } = require('express');
 const Register = require('./models/registers');
